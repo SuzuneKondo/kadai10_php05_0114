@@ -40,6 +40,10 @@ if ($status==false) {
       $view .= '</th>';
 
       $view .= '<th class="ddd">';
+      $view .= '<img src="images/' . $result['img'] . '" alt="">';
+      $view .= '</th>';
+
+      $view .= '<th class="ddd">';
       $view .= '<a href="detail.php?id=' . $result['id'] . '">';
       $view .= '[修正]';
       $view .= '</a>';
@@ -70,11 +74,6 @@ if ($status==false) {
 
   function buttonClick(){
     alert('削除しました')
-    // let result = confirm('削除しますか');
-    //   if(result){
-    //     alert('削除しました');
-    //   }else{
-    //   }
   }
 
 </script>
@@ -94,16 +93,18 @@ if ($status==false) {
 <!-- Main[Start] -->
 <main>
   <h1 class="form-title">読んだ絵本リスト</h1>
-  <!-- <h2>残り冊</h2> -->
   <div class="result-box-flame">
     <table border="1" class="result-flame">
       <tr>
           <th class="ttt" width="200px">名前</th>
           <th class="ttt">コメント</th>
+          <th class="ttt">画像</th>
           <th class="ttt" width="40px">修正</th>
           <th class="ttt" width="40px">削除</th>
       </tr>
       <tr><?= $view ?></tr>
+    </table>
+
   </div>
 </main>
 <!-- Main[End] -->

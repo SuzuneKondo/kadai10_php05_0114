@@ -22,17 +22,23 @@
     </header>
 
     <main>
-        <form method="post" action="insert.php">
+        <form method="post" action="insert.php" enctype="multipart/form-data">
             <div class="box-flame">
                 <h1 class="form-title">絵本の記録</h1>
                 <h2 class="sub-title">３歳までに１万冊への道</h2>
                 <div class="data-table">
+                  <div class='text-danger'>    
+                    <?php if (isset($_GET['error'])) : ?>
+                    <p>本の名前を入力してください。</p>
+                    <?php endif ?>
+                  </div>
                     <table class="form-wrapper">
                         <tr>
                             <th>
                                 <div class="form-name">名前：</div> 
                             </th>
                             <td><input type="text" name="name" id="txt-box" placeholder=""></td>
+                            <!-- // もしURLパラメータがある場合 -->
                         </tr>
                         <tr>
                             <th>
@@ -45,6 +51,12 @@
                                 <div class="form-name">感想：</div> 
                             </th>
                             <td><textArea type="text" name="comment" rows="4" cols="40" id=""></textarea></td>
+                        </tr>
+                        <tr>
+                             <th>
+                                <div class="form-name">画像：</div> 
+                            </th>
+                            <td><input type="file" name="img"></td>
                         </tr>
                     </table>
                 </div>

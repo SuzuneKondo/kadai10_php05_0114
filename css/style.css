@@ -187,3 +187,8 @@ nav ul li a{
 nav ul li a:hover{
     color: #fbfeff;
 }
+
+.text-danger{
+    text-align: center;
+    color: red;
+}
